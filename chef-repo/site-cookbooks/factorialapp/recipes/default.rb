@@ -21,8 +21,8 @@ if app_path != "/vagrant"
   cookbook_file "/etc/init/factorial-api.conf" do
     source "factorial-api.conf"
   end
-  service "factorial" do
+  service "factorial-api" do
     provider Chef::Provider::Service::Upstart
-    action [ :enable, :start ]
+    action [ :enable ]
   end
 end
